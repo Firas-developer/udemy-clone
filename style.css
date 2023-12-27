@@ -63,10 +63,10 @@ body{
 .navbar__right__mylearning:hover .mylearning__popup{
     display: block;
 }
-/*Sales Section styling*/
-.sales{
-    position: relative;
+.navbar__menu{
+    display: none;
 }
+/*Sales Section styling*/
 .sales__course{
     padding: 10px;
     display: flex;
@@ -90,19 +90,24 @@ body{
 .sales__img img{
     width: 100%;
 }
+.sales__img{
+    position: relative;
+}
 .sales__msg{
-    width: 350px;
-    height: 180px;
+    width: 20%;
     border: solid 1px black;
-    padding: 10px;
+    padding: 2%;
     position: absolute;
-    top: 120px;
-    left: 250px;
+    top: 15%;
+    left: 15%;
     background-color: white;
     animation-name: fadein;
     animation-duration: 2s;
     opacity: 0;
     animation-fill-mode: forwards;
+}
+.sales__msg p{
+    margin-top: 10px;
 }
 @keyframes fadein {
     0%{
@@ -127,8 +132,13 @@ body{
     margin-top: 10px;
     flex-wrap: wrap;
 }
+.course_card{
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
+}
 .course_card img{
-    width: 300px;
+    width: 100%;
     height: 50%;
 }
 .topics{
@@ -174,4 +184,42 @@ body{
     justify-content: space-between;
     margin-top: 20px;
     align-items: end;
+}
+/*Media Queries*/
+@media screen and (max-width:900px) {
+    body{
+        font-size: 10px;
+    }
+    .sales__msg{
+        width: 30%;
+    }
+    .navbar__middle input{
+        font-size: 12px;
+        height: fit-content;
+    }
+}
+@media screen and (max-width:550px) {
+    .sales__msg{
+        width: 40%;
+    }
+    .navbar__right{
+        display: none;
+    }
+    .navbar__middle input{
+        font-size: 12px;
+        height: fit-content;
+    }
+    .navbar__middle{
+        margin-right: 10%;
+    }
+    .navbar__menu{
+        display: block;
+    }
+    .sales__course{
+        display: none;
+    }
+    .course_card{
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
 }
